@@ -1,0 +1,61 @@
+version: "3.9"
+networks:
+  roboshop:
+    driver: bridge
+services:
+  mongodb:
+    image: rohitsingirikonda/mongodb:v2
+    container_name: mongodb
+  redis:
+    image: redis
+  mysql:
+    image: rohitsingirikonda/mysql:v2
+    container_name: mysql
+  rabbitmq:
+    image: rabbitmq:3.7-management-alpine
+  catalogue:
+    image: rohitsingirikonda/catalogue:v2
+    container_name: catalogue
+    depends_on:
+    - mongodb
+  user:
+    image: rohitsingirikonda/user:v2
+    container_name: user
+    depends_on:
+    - mongodb
+    - redis
+  cart:
+    image: rohitsingirikonda/cart:v2
+    container_name: cart
+    depends_on:
+    - redis
+    - catalogue 
+  ratings:
+    image: rohitsingirikonda/ratings:v2
+    container_name: ratings
+    depends_on:
+    - catalogue
+  shipping:
+    image: rohitsingirikonda/shipping:v2
+    container_name: shipping
+    depends_on:
+    - mysql
+  payment:
+    image: rohitsingirikonda/payment:v2
+    container_name: payment
+    depends_on:
+    - rabbitmq 
+  web:
+    image: rohitsingirikonda/web:v2
+    container_name: web
+    ports:
+      - 80:80
+    depends_on:
+    - catalogue
+    - cart
+    - user
+    - mysql
+    - shipping
+    - payment
+
+#docker-compose up -d
