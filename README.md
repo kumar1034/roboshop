@@ -153,3 +153,6 @@ Default Bridge network cannot resolves the names.
 Docker recommends to create own default bridge network.
 Containers are isolated from the another project
 We can communicate using names between containers**
+
+
+image.png
