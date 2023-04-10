@@ -160,6 +160,7 @@ We can communicate using names between containers**
 
 ![image](https://user-images.githubusercontent.com/8718083/230900706-81f0a7fb-16f3-42d8-92f9-bc5559ee4df2.png)
 
-![image](https://user-images.githubusercontent.com/8718083/230908804-9dc8078b-d148-4a2d-b86d-523fbd144a06.png)
+
+![image](https://user-images.githubusercontent.com/8718083/230933299-29153063-850c-41b3-bc76-89ae57b0138a.png)
 
 
