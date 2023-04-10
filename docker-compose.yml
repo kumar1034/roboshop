@@ -4,47 +4,47 @@ networks:
     driver: bridge
 services:
   mongodb:
-    image: rohitsingirikondamongodb:v1
+    image: rohitsingirikonda/mongodb:v1
     container_name: mongodb
   redis:
-    image: rohitsingirikondaredis
+    image: redis
   catalogue:
-    image: rohitsingirikondacatalogue:v1
+    image: rohitsingirikonda/catalogue:v1
     container_name: catalogue
     depends_on:
     - mongodb
   user:
-    image: rohitsingirikondauser:v1
+    image: rohitsingirikonda/user:v1
     container_name: user
     depends_on:
     - mongodb
     - redis
   cart:
-    image: rohitsingirikondacart:v1
+    image: rohitsingirikonda/cart:v1
     container_name: cart
     depends_on:
     - redis
     - catalogue 
   ratings:
-    image: rohitsingirikondaratings:v1
+    image: rohitsingirikonda/ratings:v1
     container_name: ratings
     depends_on:
     - catalogue
   mysql:
-    image: rohitsingirikondamysql:v1
+    image: rohitsingirikonda/mysql:v1
     container_name: mysql
   shipping:
-    image: rohitsingirikondashipping:v1
+    image: rohitsingirikonda/shipping:v1
     container_name: shipping
     depends_on:
     - mysql
   payment:
-    image: rohitsingirikondapayment:v1
+    image: rohitsingirikonda/payment:v1
     container_name: payment
     depends_on:
     - shipping  
   web:
-    image: rohitsingirikondaweb:v1
+    image: rohitsingirikonda/web:v1
     container_name: web
     ports:
       - 80:80
