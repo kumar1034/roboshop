@@ -37,7 +37,12 @@ services:
     image: shipping:v1
     container_name: shipping
     depends_on:
-    - mysql 
+    - mysql
+  payment:
+    image: payment:v1
+    container_name: payment
+    depends_on:
+    - shipping  
   web:
     image: web:v1
     container_name: web
@@ -49,5 +54,6 @@ services:
     - user
     - mysql
     - shipping
+    - payment
 
 #docker-compose up -d
