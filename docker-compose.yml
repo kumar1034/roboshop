@@ -25,6 +25,11 @@ services:
     depends_on:
     - redis
     - catalogue 
+  ratings:
+    image: ratings:v1
+    container_name: ratings
+    depends_on:
+    - catalogue 
   web:
     image: web:v1
     container_name: web
@@ -34,3 +39,5 @@ services:
     - catalogue
     - cart
     - user
+
+#docker-compose up -d
