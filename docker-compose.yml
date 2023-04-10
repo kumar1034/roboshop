@@ -29,12 +29,16 @@ services:
     image: ratings:v1
     container_name: ratings
     depends_on:
-    - catalogue 
+    - catalogue
+  mysql:
+    image: mysql:v1
+    container_name: mysql
   shipping:
     image: shipping:v1
     container_name: shipping
     depends_on:
-    - catalogue 
+    - catalogue
+    - mysql 
   web:
     image: web:v1
     container_name: web
