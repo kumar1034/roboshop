@@ -8,6 +8,11 @@ services:
     container_name: mongodb
   redis:
     image: redis
+  mysql:
+    image: rohitsingirikonda/mysql:v1
+    container_name: mysql
+  rabbitmq:
+    image: rabbitmq:3.7-management-alpine
   catalogue:
     image: rohitsingirikonda/catalogue:v1
     container_name: catalogue
@@ -30,9 +35,6 @@ services:
     container_name: ratings
     depends_on:
     - catalogue
-  mysql:
-    image: rohitsingirikonda/mysql:v1
-    container_name: mysql
   shipping:
     image: rohitsingirikonda/shipping:v1
     container_name: shipping
@@ -42,7 +44,7 @@ services:
     image: rohitsingirikonda/payment:v1
     container_name: payment
     depends_on:
-    - shipping  
+    - rabbitmq 
   web:
     image: rohitsingirikonda/web:v1
     container_name: web
