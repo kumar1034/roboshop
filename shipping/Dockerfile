@@ -15,7 +15,8 @@ RUN mvn package
 #
 # Run
 #
-FROM openjdk:8-jdk
+#FROM openjdk:8-jdk
+FROM openjdk:8-jre-alpine
 
 EXPOSE 8080
 
