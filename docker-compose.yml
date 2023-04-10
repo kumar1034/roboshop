@@ -6,11 +6,19 @@ services:
   mongodb:
     image: mongodb:v1
     container_name: mongodb
+  redis:
+    image: redis
   catalogue:
     image: catalogue:v1
     container_name: catalogue
     depends_on:
-    - mongodb 
+    - mongodb
+  user:
+    image: user:v1
+    container_name: user
+    depends_on:
+    - mongodb
+    - redis 
   web:
     image: web:v1
     container_name: web
