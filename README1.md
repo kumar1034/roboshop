@@ -12,5 +12,8 @@
  -- It is markup language
  --  
 
-** Build all at once**
-`for i in web mongodb catalogue userr cart mysql shipping; do cd $i ; docker build -t $i:v1 . ; cd .. ; done`
+**Build all at once**
+`for i in web mongodb catalogue user cart mysql shipping payment ratings; do cd $i ; docker build -t $i:v1 . ; cd .. ; done`
+
+**Build and push all at once**
+`for i in web mongodb catalogue user cart mysql shipping payment ratings; do cd $i ; docker build -t rohitsingirikonda/$i:v1 . ; docker push rohitsingirikonda/$i:v1 ; cd .. ; done`
