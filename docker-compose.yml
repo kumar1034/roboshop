@@ -37,7 +37,6 @@ services:
     image: shipping:v1
     container_name: shipping
     depends_on:
-    - catalogue
     - mysql 
   web:
     image: web:v1
@@ -48,5 +47,7 @@ services:
     - catalogue
     - cart
     - user
+    - mysql
+    - shipping
 
 #docker-compose up -d
