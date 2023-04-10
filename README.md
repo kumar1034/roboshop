@@ -146,6 +146,7 @@ docker run -d --name=mongodb --network roboshop mongodb:v1
 docker run -d --name=catalogue --network roboshop catalogue:v1
 docker run -d -p 80:80 --name web --network roboshop web:v1
 docker run -d --name user --network roboshop user:v1
+docker-compose
 ```
 
 4. Connect Web to Catalogue
