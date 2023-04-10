@@ -17,3 +17,6 @@
 
 **Build and push all at once**
 `for i in web mongodb catalogue user cart mysql shipping payment ratings; do cd $i ; docker build -t rohitsingirikonda/$i:v1 . ; docker push rohitsingirikonda/$i:v1 ; cd .. ; done`
+
+**Delete the Created Images**
+`for i in web mongodb catalogue user cart mysql shipping payment ratings; do cd $i ; docker rmi rohitsingirikonda/$i:v1 . ; cd .. ; done`
