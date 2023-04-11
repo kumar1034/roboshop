@@ -8,6 +8,8 @@ RUN addgroup roboshop && adduser --system cartuser && usermod -aG roboshop cartu
 
 RUN chown -R cartuser:roboshop /opt/server/
 
+USER cartuser
+
 COPY package.json /opt/server/
 
 RUN npm install
