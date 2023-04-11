@@ -4,7 +4,7 @@ EXPOSE 8080
 
 WORKDIR /opt/server
 
-RUN addgroup roboshop && adduser cartuser -G roboshop
+RUN addgroup roboshop && adduser --system cartuser && usermod -aG roboshop cartuser 
 
 RUN chown -R cartuser:roboshop /opt/server/
 
