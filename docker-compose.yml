@@ -25,7 +25,7 @@ services:
     - mongodb
     - redis
   cart:
-    image: rohitsingirikonda/cart:v1
+    image: cart:v1
     container_name: cart
     depends_on:
     - redis
