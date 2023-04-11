@@ -58,4 +58,4 @@ services:
     - shipping
     - payment
 
-#docker-compose up -d
+#docker-compose -f docker-composev2.yml up -d
