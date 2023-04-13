@@ -157,8 +157,12 @@ Docker recommends to create own default bridge network.
 Containers are isolated from the another project
 We can communicate using names between containers**
 
+Bridge Network.
+Host Network.
+Overlay Network.
 
-![image](https://user-images.githubusercontent.com/8718083/230900706-81f0a7fb-16f3-42d8-92f9-bc5559ee4df2.png)
+
+![image](https://user-images.githubusercontent.com/8718083/231821874-284c7033-2a24-40cb-ba45-f716c26834c2.png)
 
 
 ![image](https://user-images.githubusercontent.com/8718083/231006168-1653f2a5-7449-44ad-96bd-ae827a78c840.png)
