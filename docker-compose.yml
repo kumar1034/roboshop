@@ -9,25 +9,25 @@ volumes:
     driver_opts:
       o: bind
       type: none
-      device: /home/roboshop/roboshop_volumes/mysql
+      device: /home/rohit/mysql
   mongodb:
     driver: local 
     driver_opts:
       o: bind
       type: none
-      device: /home/roboshop/roboshop_volumes/mongodb
+      device: /home/rohit/mongodb
   rabbitmq:
     driver: local 
     driver_opts:
       o: bind
       type: none
-      device: /home/roboshop/roboshop_volumes/rabbitmq
+      device: /home/rohit/rabbitmq
   redis:
     driver: local 
     driver_opts:
       o: bind
       type: none
-      device: /home/roboshop/roboshop_volumes/redis            
+      device: /home/rohit/redis            
 services:
   mongodb:
     image: rohitsingirikonda/mongodb:v1
