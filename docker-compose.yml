@@ -38,7 +38,7 @@ services:
     image: redis
     container_name: redis
     volumes:
-    - mongodb:/data
+    - redis:/data
   mysql:
     image: rohitsingirikonda/mysql:v1
     container_name: mysql
